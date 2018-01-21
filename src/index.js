@@ -4,6 +4,7 @@ import { createOfflineActions, markActionsOffline } from './offlineActions'
 import reducer from './reducer'
 import suspendSaga from './suspendSaga'
 import consumeActionMiddleware from './consumeActionMiddleware'
+import offlinePersistenceTransform from './offlinePersistenceTransform'
 
 module.exports = {
   ONLINE: actions.ONLINE,
@@ -14,4 +15,5 @@ module.exports = {
   reducer,
   suspendSaga,
   consumeActionMiddleware,
+  offlinePersistenceTransform,
 }
