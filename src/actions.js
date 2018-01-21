@@ -1,4 +1,4 @@
-const ACTION_PREFIX = 'offline-queue/'
+const ACTION_PREFIX = 'redux-offline-queue/'
 
 /**
  * External actions.
