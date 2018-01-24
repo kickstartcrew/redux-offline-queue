@@ -11,7 +11,7 @@
     "offline",
     "queue"
   ],
-  "author": "",
+  "author": "Inspire",
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.4",
