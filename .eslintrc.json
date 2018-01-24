@@ -1,9 +1,11 @@
 {
     "extends": "airbnb",
-    "plugins": ["jest"],
     "parser": "babel-eslint",
     "rules": {
       "semi": [2, "never"],
       "arrow-body-style": [0, "as-needed"]
+    },
+    "env": {
+      "jest": true
     }
 }
