@@ -1,4 +1,4 @@
-import { REHYDRATE } from 'redux-persist/constants'
+import { REHYDRATE } from 'redux-persist'
 
 import INITIAL_STATE from './initialState'
 import { QUEUE_ACTION, ONLINE, OFFLINE, RESET_QUEUE } from './actions'
