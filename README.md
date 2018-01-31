@@ -1,10 +1,12 @@
 # redux-offline-queue
 
-This package is a simple solution to handling actions or requests with redux while the app is in an offline state by queueing these, and dispatching them once connectivity is established once again.
+This package is a simple solution for handling actions or requests with redux while the app is in an offline state by queueing these, and dispatching them once connectivity is re-established. **Works perfect with react-native**
+
+Motivation: Provide a better user experience.
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [compatability](#compatability)
+- [Compatibility](#compatibility)
 - [Additional Configuration](#additional-configuration)
 
 ## Installation
@@ -19,7 +21,7 @@ OR (old school)
 
 Get up and running in 4 easy steps:
 
-### Step 1: Add the redux-offline-queue reducer to yours
+### Step 1: Add the redux-offline-queue reducer to your conbine reducers
 
 Either import the `{ reducer as offlineQueue }` from `redux-offline-queue` and add it to the `combineReducers` or require it like so (whatever floats your boat):
 
@@ -137,3 +139,7 @@ applyMiddleware(offlineMiddleware({
 }))
 ...
 ```
+
+## Contributing
+
+Bug reports and pull requests are welcome. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org) code of conduct.
