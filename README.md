@@ -21,7 +21,7 @@ OR (old school)
 
 Get up and running in 4 easy steps:
 
-### Step 1: Add the redux-offline-queue reducer to your conbine reducers
+### Step 1: Add the redux-offline-queue reducer to your combine reducers
 
 Either import the `{ reducer as offlineQueue }` from `redux-offline-queue` and add it to the `combineReducers` or require it like so (whatever floats your boat):
 
@@ -94,6 +94,31 @@ if (appIsConnected) {
 ```
 
 Works perfect with React Native's `NetInfo`
+
+```javascript
+import { put, take, call } from 'redux-saga/effects'
+import { NetInfo } from 'react-native'
+import { OFFLINE, ONLINE } from 'redux-offline-queue'
+
+function* startWatchingNetworkConnectivity() {
+  const channel = eventChannel((emitter) => {
+    NetInfo.isConnected.addEventListener('connectionChange', emitter)
+    return () => NetInfo.isConnected.removeEventListener('connectionChange', emitter)
+  })
+  try {
+    for (; ;) {
+      const isConnected = yield take(channel)
+      if (isConnected) {
+        yield put({ type: ONLINE })
+      } else {
+        yield put({ type: OFFLINE })
+      }
+    }
+  } finally {
+    channel.close()
+  }
+}
+```
 
 **Android**
 
