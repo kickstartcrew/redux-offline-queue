@@ -9,7 +9,8 @@
   "keywords": [
     "redux",
     "offline",
-    "queue"
+    "queue",
+    "react native offline"
   ],
   "author": "Inspire",
   "license": "MIT",

@@ -95,6 +95,13 @@ if (appIsConnected) {
 
 Works perfect with React Native's `NetInfo`
 
+**Android**
+
+If react native's `NetInfo` is intended to be used, for android don't forget to add the following to the `AndroidManifest.xml` :
+```xml
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+
 Inspired by redux-queue-offline(mathieudutour)
 
 Developed by Krzysztof Ciombor
