@@ -1,6 +1,6 @@
 {
   "name": "redux-offline-queue",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Simple offline queue for redux, inspired by redux-queue-offline.",
   "main": "./src/index.js",
   "scripts": {
@@ -12,6 +12,10 @@
     "queue",
     "react native offline"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/InspireNL/redux-offline-queue.git"
+  },
   "author": "Inspire",
   "license": "MIT",
   "dependencies": {
@@ -23,7 +27,7 @@
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^22.1.0",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
     "eslint": "^4.16.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
