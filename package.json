@@ -1,9 +1,10 @@
 {
   "name": "redux-offline-queue",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple offline queue for redux, inspired by redux-queue-offline.",
-  "main": "./src/index.js",
+  "main": "lib/index.js",
   "scripts": {
+    "build": "babel src --out-dir lib",
     "test": "jest"
   },
   "keywords": [
@@ -24,10 +25,12 @@
     "reduxsauce": "^0.7.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^22.1.0",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1",
     "eslint": "^4.16.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
