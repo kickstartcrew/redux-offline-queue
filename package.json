@@ -2,9 +2,9 @@
   "name": "redux-offline-queue",
   "version": "1.0.4",
   "description": "Simple offline queue for redux, inspired by redux-queue-offline.",
-  "main": "lib/index.js",
+  "main": "dist/bundle.min.js",
   "scripts": {
-    "build": "babel src --out-dir lib",
+    "build": "webpack --mode production",
     "test": "jest"
   },
   "keywords": [
@@ -29,6 +29,7 @@
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.1",
     "babel-jest": "^22.1.0",
+    "babel-loader": "^7.1.3",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^4.16.0",
@@ -36,6 +37,8 @@
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.5.1",
-    "jest": "^22.1.4"
+    "jest": "^22.1.4",
+    "webpack": "^4.0.1",
+    "webpack-cli": "^2.0.9"
   }
 }
