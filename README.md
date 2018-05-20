@@ -19,6 +19,8 @@ OR (old school)
 
 ## Usage
 
+**See example project here:** [offlineTweet](https://github.com/RobPando/offlineTweet)
+
 Get up and running in 4 easy steps:
 
 ### Step 1: Add the redux-offline-queue reducer to your combine reducers
