@@ -1,7 +1,7 @@
-import { REHYDRATE } from 'redux-persist'
+import { REHYDRATE } from 'redux-persist';
 
-import INITIAL_STATE from './initialState'
-import { QUEUE_ACTION, ONLINE, OFFLINE, RESET_QUEUE } from './actions'
+import INITIAL_STATE from './initialState';
+import { QUEUE_ACTION, ONLINE, OFFLINE, RESET_QUEUE } from './actions';
 
 /**
  * Reducer for the offline queue.
@@ -10,21 +10,20 @@ import { QUEUE_ACTION, ONLINE, OFFLINE, RESET_QUEUE } from './actions'
  * @param {Object} action Action that was dispatched to the store.
  */
 export default function reducer(state = INITIAL_STATE, action = {}) {
-  switch (action.type) {
-    case REHYDRATE: { // Handle rehydrating with custom shallow merge.
-      const incoming = action.payload.offline
-      if (incoming) return { ...state, ...incoming }
-      return state
+    switch (action.type) {
+        case REHYDRATE: {
+            // Handle rehydrating with custom shallow merge.
+            return action.payload && action.payload.offline ? { ...state, ...action.payload.offline } : state;
+        }
+        case QUEUE_ACTION:
+            return { ...state, queue: state.queue.concat(action.payload) };
+        case ONLINE:
+            return { ...state, isConnected: true };
+        case OFFLINE:
+            return { ...state, isConnected: false };
+        case RESET_QUEUE:
+            return { ...state, queue: [] };
+        default:
+            return state;
     }
-    case QUEUE_ACTION:
-      return { ...state, queue: state.queue.concat(action.payload) }
-    case ONLINE:
-      return { ...state, isConnected: true }
-    case OFFLINE:
-      return { ...state, isConnected: false }
-    case RESET_QUEUE:
-      return { ...state, queue: [] }
-    default:
-      return state
-  }
 }
