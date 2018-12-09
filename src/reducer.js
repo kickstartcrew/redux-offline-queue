@@ -12,8 +12,11 @@ import { QUEUE_ACTION, ONLINE, OFFLINE, RESET_QUEUE } from './actions'
 export default function reducer(state = INITIAL_STATE, action = {}) {
   switch (action.type) {
     case REHYDRATE: { // Handle rehydrating with custom shallow merge.
-      const incoming = action.payload.offline
-      if (incoming) return { ...state, ...incoming }
+
+      if (action.payload && action.payload.offline) {
+        const incoming = action.payload.offline;
+        if (incoming) return { ...state, ...incoming };
+      }
       return state
     }
     case QUEUE_ACTION:
