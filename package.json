@@ -1,6 +1,6 @@
 {
   "name": "redux-offline-queue",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Simple offline queue for redux, inspired by redux-queue-offline.",
   "main": "lib/index.js",
   "scripts": {
