@@ -36,6 +36,8 @@ export default combineReducers({
 })
 ```
 
+Note: You can change the `stateName` (ex: `offline`) by passing `stateName` to additional configuration.
+
 ### Step 2: Add the offlineMiddleware
 
 ```javascript
