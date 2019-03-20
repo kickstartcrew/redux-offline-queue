@@ -63,7 +63,11 @@ function fireQueuedActions(queue, dispatch) {
 export default function offlineMiddleware(userConfig = {}) {
   return ({ getState, dispatch }) => next => (action) => {
     const config = getConfig(userConfig)
-    const { stateName, additionalTriggers } = config
+    const {
+      stateName,
+      additionalTriggers,
+      dontDispatchActionAfterQueue,
+    } = config
 
     const state = _.get(getState(), stateName, INITIAL_STATE)
 
@@ -100,6 +104,8 @@ export default function offlineMiddleware(userConfig = {}) {
       skipSaga: true,
     }
 
-    return next(skipSagaAction)
+    if (dontDispatchActionAfterQueue === false) {
+      return next(skipSagaAction)
+    }
   }
 }
