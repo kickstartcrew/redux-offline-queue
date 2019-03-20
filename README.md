@@ -25,13 +25,13 @@ Get up and running in 4 easy steps:
 
 ### Step 1: Add the redux-offline-queue reducer to your combine reducers
 
-Either import the `{ reducer as offlineQueue }` from `redux-offline-queue` and add it to the `combineReducers` or require it like so (whatever floats your boat):
+Either import the `{ reducer as offline }` from `redux-offline-queue` and add it to the `combineReducers` or require it like so (whatever floats your boat):
 
 ```javascript
 import { combineReducers } from 'redux'
 
 export default combineReducers({
-    offlineQueue: require('redux-offline-queue').reducer,
+    offline: require('redux-offline-queue').reducer,
     yourOtherReducer: require('~App/yourOtherReducer').reducer,
 })
 ```
