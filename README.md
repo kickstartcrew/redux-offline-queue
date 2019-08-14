@@ -177,3 +177,12 @@ applyMiddleware(offlineMiddleware({
 ## Contributing
 
 Bug reports and pull requests are welcome. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org) code of conduct.
+
+## License 
+ 
+Original work copyright 2018-2019 [Inspire Innovation BV](https://inspire.nl).
+Continued work copyright 2019 Roberto Pando. 
+
+Read [LICENSE](LICENSE) for details.
+
+The development of this package has been sponsored by Inspire Innovation BV (Utrecht, The Netherlands).
