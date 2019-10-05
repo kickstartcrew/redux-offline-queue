@@ -31,7 +31,7 @@ Either import the `{ reducer as offlineQueue }` from `redux-offline-queue` and a
 import { combineReducers } from 'redux'
 
 export default combineReducers({
-    offlineQueue: require('redux-offline-queue').reducer,
+    offline: require('redux-offline-queue').reducer,
     yourOtherReducer: require('~App/yourOtherReducer').reducer,
 })
 ```
@@ -99,7 +99,7 @@ Works perfect with React Native's `NetInfo`
 
 ```javascript
 import { put, take, call } from 'redux-saga/effects'
-import { NetInfo } from 'react-native'
+import NetInfo from '@react-native-community/netinfo'
 import { OFFLINE, ONLINE } from 'redux-offline-queue'
 
 function* startWatchingNetworkConnectivity() {
@@ -108,7 +108,7 @@ function* startWatchingNetworkConnectivity() {
     return () => NetInfo.isConnected.removeEventListener('connectionChange', emitter)
   })
   try {
-    for (; ;) {
+    while(true) {
       const isConnected = yield take(channel)
       if (isConnected) {
         yield put({ type: ONLINE })
