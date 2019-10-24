@@ -1,5 +1,9 @@
 import { createActions } from 'reduxsauce'
-import _ from 'lodash'
+import {
+  mapValues as _mapValues,
+  forEach as _forEach,
+  has as _has,
+} from 'lodash'
 
 /**
  * Wraps reduxsauce's creator function to append offline metadata.
@@ -34,7 +38,7 @@ const appendOfflineMeta = (creator) => {
 export function createOfflineActions(config) {
   const { Types, Creators } = createActions(config)
 
-  const OfflineCreators = _.mapValues(Creators, (creator) => {
+  const OfflineCreators = _mapValues(Creators, (creator) => {
     return appendOfflineMeta(creator)
   })
 
@@ -56,8 +60,8 @@ export function createOfflineActions(config) {
  * @param {Array} offlineActions An array of action names.
  */
 export function markActionsOffline(creators, offlineActions) {
-  _.forEach(offlineActions, (offlineAction) => {
-    if (_.has(creators, offlineAction)) {
+  _forEach(offlineActions, (offlineAction) => {
+    if (_has(creators, offlineAction)) {
       // eslint-disable-next-line no-param-reassign
       creators[offlineAction] = appendOfflineMeta(creators[offlineAction])
     }
