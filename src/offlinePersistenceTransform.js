@@ -1,5 +1,5 @@
 import { createTransform } from 'redux-persist'
-import _ from 'lodash'
+import { omit as _omit } from 'lodash'
 
 const OMIT_KEYS = ['isConnected']
 
@@ -8,7 +8,7 @@ const OMIT_KEYS = ['isConnected']
  * to omit persisting `isConnected` key from offline queue.
  */
 export default createTransform(
-  inboundState => _.omit(inboundState, OMIT_KEYS),
+  inboundState => _omit(inboundState, OMIT_KEYS),
   outboundState => outboundState,
   { whitelist: ['offline'] },
 )
