@@ -65,7 +65,7 @@ function fireQueuedActions(queue, dispatch) {
  * @param {Object} userConfig See: config.js for the configuration options.
  */
 export default function offlineMiddleware(userConfig = {}) {
-  return ({ getState, dispatch }) => next => (action) => {
+  return ({ getState, dispatch }) => (next) => (action) => {
     const config = getConfig(userConfig)
     const { stateName, additionalTriggers } = config
 

@@ -1,7 +1,12 @@
 import { REHYDRATE } from 'redux-persist'
 
 import INITIAL_STATE from './initialState'
-import { QUEUE_ACTION, ONLINE, OFFLINE, RESET_QUEUE } from './actions'
+import {
+  QUEUE_ACTION,
+  ONLINE,
+  OFFLINE,
+  RESET_QUEUE,
+} from './actions'
 
 /**
  * Reducer for the offline queue.
@@ -11,10 +16,10 @@ import { QUEUE_ACTION, ONLINE, OFFLINE, RESET_QUEUE } from './actions'
  */
 export default function reducer(state = INITIAL_STATE, action = {}) {
   switch (action.type) {
-    case REHYDRATE: { // Handle rehydrating with custom shallow merge.
-
+    case REHYDRATE: {
+      // Handle rehydrating with custom shallow merge.
       if (action.payload && action.payload.offline) {
-        return { ...state, ...action.payload.offline };
+        return { ...state, ...action.payload.offline }
       }
 
       return state

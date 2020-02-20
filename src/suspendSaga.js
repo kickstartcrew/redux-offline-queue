@@ -23,7 +23,7 @@
  * @param {Function} middleware Saga middleware.
  */
 export default function suspendSaga(middleware) {
-  return store => (next) => {
+  return (store) => (next) => {
     const delegate = middleware(store)(next)
 
     return (action) => {

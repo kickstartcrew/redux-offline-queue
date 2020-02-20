@@ -17,7 +17,7 @@ import { get as _get } from 'lodash'
  * For example, we do want the saga or logger to react to this action.
  */
 export default function consumeActionMiddleware() {
-  return store => next => (action) => {
+  return (store) => (next) => (action) => {
     const shouldConsumeAction = _get(action, 'consume', false)
     if (shouldConsumeAction) {
       return next({ type: '@@CONSUME@@', payload: { ...action } })

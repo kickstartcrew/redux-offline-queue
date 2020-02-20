@@ -8,7 +8,7 @@ const OMIT_KEYS = ['isConnected']
  * to omit persisting `isConnected` key from offline queue.
  */
 export default createTransform(
-  inboundState => _omit(inboundState, OMIT_KEYS),
-  outboundState => outboundState,
+  (inboundState) => _omit(inboundState, OMIT_KEYS),
+  (outboundState) => outboundState,
   { whitelist: ['offline'] },
 )

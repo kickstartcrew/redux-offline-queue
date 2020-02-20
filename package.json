@@ -21,21 +21,21 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.13",
-    "redux-persist": "^5.5.0",
-    "reduxsauce": "^1.1.1"
+    "redux-persist": "^6.0.0",
+    "reduxsauce": "^1.1.2"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.1",
-    "babel-jest": "^22.1.0",
-    "babel-preset-env": "^1.6.1",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^25.1.0",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
-    "eslint": "^4.18.2",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.5.1",
-    "jest": "^22.1.4"
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.3",
+    "jest": "^25.1.0"
   }
 }
