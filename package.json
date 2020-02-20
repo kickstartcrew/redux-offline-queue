@@ -1,6 +1,6 @@
 {
   "name": "redux-offline-queue",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Simple offline queue for redux, inspired by redux-queue-offline.",
   "main": "lib/index.js",
   "scripts": {
@@ -15,9 +15,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/InspireNL/redux-offline-queue.git"
+    "url": "https://github.com/RobPando/redux-offline-queue.git"
   },
-  "author": "Inspire",
+  "author": "Rob Pando",
   "license": "MIT",
   "dependencies": {
     "lodash": "^4.17.13",
