@@ -32,6 +32,7 @@ function fireQueuedActions(queue, dispatch) {
       ...actionInQueue,
       consume: true,
       meta: {
+        ...actionInQueue.meta,
         queueIfOffline: false,
       },
     })

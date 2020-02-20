@@ -16,6 +16,7 @@ const appendOfflineMeta = (creator) => {
     return {
       ...creatorResult,
       meta: {
+        ...creatorResult.meta,
         queueIfOffline: true,
       },
     }
