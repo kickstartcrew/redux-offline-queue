@@ -4,6 +4,7 @@ import {
   forEach as _forEach,
   has as _has,
 } from 'lodash'
+import { QUEUE_ACTION } from "./actions"
 
 /**
  * Wraps reduxsauce's creator function to append offline metadata.
@@ -67,4 +68,19 @@ export function markActionsOffline(creators, offlineActions) {
       creators[offlineAction] = appendOfflineMeta(creators[offlineAction])
     }
   })
+}
+
+/**
+ * Provides an object with the action type that is utilized to queue request actions.
+ * The action provided should include a type and the payload.
+ *
+ * @param {Object} action An action that needs to be queued.
+ */
+export const queueAction = (action) => {
+  return {
+    type: QUEUE_ACTION,
+    payload: {
+      ...action,
+    }
+  }
 }
