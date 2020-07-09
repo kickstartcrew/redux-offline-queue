@@ -4,7 +4,9 @@ import {
   forEach as _forEach,
   has as _has,
 } from 'lodash'
-import { QUEUE_ACTION } from "./actions"
+import uuid from 'uuid/v4'
+
+import { QUEUE_ACTION, REMOVE_ACTION } from "./actions"
 
 /**
  * Wraps reduxsauce's creator function to append offline metadata.
@@ -14,9 +16,11 @@ import { QUEUE_ACTION } from "./actions"
 const appendOfflineMeta = (creator) => {
   return (...rest) => {
     const creatorResult = creator(...rest)
+
     return {
       ...creatorResult,
       meta: {
+        uuid: uuid(),
         ...creatorResult.meta,
         queueIfOffline: true,
       },
@@ -81,6 +85,19 @@ export const queueAction = (action) => {
     type: QUEUE_ACTION,
     payload: {
       ...action,
+      meta: {
+        uuid: uuid(),
+        ...action.meta,
+      },
+    }
+  }
+}
+
+export const removeAction = (action) => {
+  return {
+    type: REMOVE_ACTION,
+    payload: {
+      uuid: action.uuid,
     }
   }
 }
