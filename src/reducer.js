@@ -6,6 +6,7 @@ import {
   ONLINE,
   OFFLINE,
   RESET_QUEUE,
+  REMOVE_ACTION,
 } from './actions'
 
 /**
@@ -30,6 +31,12 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
       return { ...state, isConnected: true }
     case OFFLINE:
       return { ...state, isConnected: false }
+    case REMOVE_ACTION: {
+      if (action.payload.uuid) {
+        const filteredQueue = state.queue.filter(queuedAction => queuedAction.meta.uuid !== uuid)
+        return { ...state, queue: [...filteredQueue] }
+      }
+    }
     case RESET_QUEUE:
       return { ...state, queue: [] }
     default:
