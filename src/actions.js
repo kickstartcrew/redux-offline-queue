@@ -15,4 +15,5 @@ export const OFFLINE = `${ACTION_PREFIX}OFFLINE`
  * These are fired to manage the internal offline queue state.
  */
 export const QUEUE_ACTION = `${ACTION_PREFIX}QUEUE_ACTION`
+export const REMOVE_ACTION = `${ACTION_PREFIX}REMOVE_ACTION`
 export const RESET_QUEUE = `${ACTION_PREFIX}RESET_QUEUE`
