@@ -1,6 +1,6 @@
 {
   "name": "redux-offline-queue",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Simple offline queue for redux, inspired by redux-queue-offline.",
   "main": "lib/index.js",
   "types": "./typings.d.ts",
@@ -21,10 +21,10 @@
   "author": "Rob Pando",
   "license": "MIT",
   "dependencies": {
-    "lodash": "^4.17.13",
+    "lodash": "^4.17.21",
     "redux-persist": "^6.0.0",
     "reduxsauce": "^1.1.2",
-    "uuid": "^8.2.0"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/redux": "^3.6.0",
