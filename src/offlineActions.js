@@ -4,7 +4,7 @@ import {
   forEach as _forEach,
   has as _has,
 } from 'lodash'
-import uuid from 'uuid/v4'
+import { v4 as uuid } from 'uuid'
 
 import { QUEUE_ACTION, REMOVE_ACTION } from "./actions"
 

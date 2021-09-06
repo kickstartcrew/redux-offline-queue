@@ -2,7 +2,7 @@ import {
   includes as _includes,
   get as _get,
 } from 'lodash'
-import uuid from 'uuid/v4'
+import { v4 as uuid } from 'uuid'
 
 import INITIAL_STATE from './initialState'
 import { QUEUE_ACTION, ONLINE, RESET_QUEUE } from './actions'
