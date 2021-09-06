@@ -33,7 +33,7 @@ export default function reducer(state = INITIAL_STATE, action = {}) {
       return { ...state, isConnected: false }
     case REMOVE_ACTION: {
       if (action.payload.uuid) {
-        const filteredQueue = state.queue.filter(queuedAction => queuedAction.meta.uuid !== uuid)
+        const filteredQueue = state.queue.filter(queuedAction => queuedAction.meta.uuid !== action.payload.uuid)
         return { ...state, queue: [...filteredQueue] }
       }
     }
